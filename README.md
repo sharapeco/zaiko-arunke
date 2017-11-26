@@ -3,6 +3,8 @@
 
 在庫あるんけ (仮) is a simple personal inventory manager made in PHP [Yii Framework 2](http://www.yiiframework.com).
 
+<img alt="[画面イメージ 1]" src="https://github.com/sharapeco/zaiko-arunke/blob/master/web/assets/img/screenshot1.png?raw=true" width="375"> <img alt="[画面イメージ 2]" src="https://github.com/sharapeco/zaiko-arunke/blob/master/web/assets/img/screenshot2.png?raw=true" width="375">
+
 
 
 Requirements

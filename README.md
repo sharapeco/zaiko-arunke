@@ -1,4 +1,4 @@
-<img alt="*" src="https://raw.github.com/sharapeco/zaiko-arunke/web/assets/img/favicon.jpg" width="32" height="32">  在庫あるんけ（仮）
+<img alt="*" src="https://github.com/sharapeco/zaiko-arunke/blob/master/web/assets/img/favicon.jpg?raw=true" width="32" height="32">  在庫あるんけ（仮）
 =================================
 
 在庫あるんけ (仮) is a simple personal inventory manager made in PHP [Yii Framework 2](http://www.yiiframework.com).

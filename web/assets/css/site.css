@@ -1,0 +1,76 @@
+body {
+    font-size: 16px;
+    font-family: -apple-system, 'BlinkMacSystemFont', sans-serif;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.sortable > li {
+    cursor: pointer;
+}
+
+.jumbotron,
+h1, h2, h3,
+.item-block {
+	font-feature-settings: "palt";
+}
+
+.jumbotron h1 {
+	font-family: "ヒラギノ角ゴシック", sans-serif; font-weight: 800;
+}
+
+.form-action {
+    margin: 15px 0;
+}
+.form-action:after {
+    content: ""; display: table; clear: both;
+}
+
+.tc-action {
+    padding: 3px 10px;
+    white-space: nowrap;
+}
+
+.item-block {
+    display: block;
+    margin: 0 0 5px;
+    padding: 8px 12px;
+    color: #fff; background: linear-gradient(to bottom, #ccc, #aaa);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.item-block:hover,
+.item-block:focus {
+    color: #fff; text-decoration: none;
+ }
+
+.item-block-stretto { background: linear-gradient(to bottom, #FD624B, #F82D20); }
+.item-block-espresso { background: linear-gradient(to bottom, #FE9B31, #FA6811); }
+.item-block-andante { background: linear-gradient(to bottom, #FFD318, #FBA202); }
+.item-block-largo { background: linear-gradient(to bottom, #71D923, #78B40D); }
+.item-block-unknown {}
+
+.item-name {
+    font-weight: bold;
+}
+.item-est-refill-date > *,
+.item-last-refill-date > * {
+    display: inline-block; vertical-align: middle;
+}
+.item-est-refill-date strong,
+.item-last-refill-date strong {
+    margin-left: 10px;
+}
+.item-est-refill-date strong {
+    font-size: 240%; font-weight: 300;
+    line-height: 1;
+}
+
+footer {
+    display: none;
+	margin: 30px 0 0;
+	padding: 10px 0 0;
+	border-top: solid 1px #ddd;
+}

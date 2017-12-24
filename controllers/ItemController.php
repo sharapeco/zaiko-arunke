@@ -71,10 +71,10 @@ class ItemController extends \yii\web\Controller
     public function actionCreate()
     {
         $model = new Item;
-        
+
         // デフォルト値を設定する
         $model->unit = '個';
-        
+
         // POSTされた場合は保存する
         if ($model->load(Yii::$app->request->post())) {
             // 値を設定する
@@ -87,7 +87,7 @@ class ItemController extends \yii\web\Controller
                 // error in saving model
             }
         }
-        
+
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -124,14 +124,14 @@ class ItemController extends \yii\web\Controller
 
         return $this->redirect(['index']);
     }
-    
+
     public function actionSort()
     {
         $items = Item::find()->orderBy(['sort' => SORT_ASC])->all();
         if (count($items) < 2) {
             return $this->redirect(['index']);
         }
-        
+
         if (($post = Yii::$app->request->post()) && isset($post['orders'])) {
             if (Item::updateOrders($post['orders'])) {
                 Yii::$app->session->setFlash("Entry-success", Yii::t('app', '並び順を更新しました'));
@@ -145,13 +145,13 @@ class ItemController extends \yii\web\Controller
         $keys = array_map(function($item) {
             return $item->id;
         }, $items);
-        
+
         $contents = array_map(function($item) {
             return [
                 'content' => $item->name,
             ];
         }, $items);
-        
+
         return $this->render('sort', [
             'items' => array_combine($keys, $contents),
         ]);

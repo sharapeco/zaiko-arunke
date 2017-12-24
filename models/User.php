@@ -56,5 +56,5 @@ class User extends BaseUser
             'newPassword' => Yii::t('app', '新しいパスワード'),
             'currentPassword' => Yii::t('app', '現在のパスワード'),
         ];
-    }    
+    }
 }

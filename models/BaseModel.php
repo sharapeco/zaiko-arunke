@@ -15,29 +15,29 @@ abstract class BaseModel extends \yii\db\ActiveRecord
     /**
      * @var array 日付時間型のカラム名のリスト
      */
-    protected static $datetimeColumns = ['refill_time'];
+    protected static $datetimeColumns = [];
 
     /**
      * @var string ローカル時間のカラム名の接尾辞
      */
     protected static $localDatetimeSuffix = '_local';
-    
+
     /**
      * @param string $column
      * @return string? $sourceColumn
      */
     protected function sourceColumn($column) {
-        $columnLength = strlen($column) - strlen(self::$localDatetimeSuffix);
-        if (strpos($column, self::$localDatetimeSuffix) !== $columnLength) {
+        $columnLength = strlen($column) - strlen(static::$localDatetimeSuffix);
+        if (strpos($column, static::$localDatetimeSuffix) !== $columnLength) {
             return null;
         }
         $sourceColumn = substr($column, 0, $columnLength);
-        if (!in_array($sourceColumn, self::$datetimeColumns, true)) {
+        if (!in_array($sourceColumn, static::$datetimeColumns, true)) {
             return null;
         }
         return $sourceColumn;
     }
-    
+
     public function __get($column) {
         if (($sourceColumn = $this->sourceColumn($column))) {
             if (empty($this->$sourceColumn)) {
@@ -68,9 +68,9 @@ abstract class BaseModel extends \yii\db\ActiveRecord
             parent::__set($column, $value);
         }
     }
-    
+
     public function __isset($column) {
-        if (in_array($column, self::$datetimeColumns, true)) {
+        if (in_array($column, static::$datetimeColumns, true)) {
             return true;
         } else {
             return parent::__isset($column);

@@ -22,7 +22,7 @@ AppAsset::register($this);
 	<link rel="shortcut icon" type="image/jpeg" href="<?= Yii::$app->homeUrl ?>assets/img/favicon.jpg">
 	<link rel="apple-touch-icon" sizes="256x256" href="<?= Yii::$app->homeUrl ?>assets/img/favicon.jpg">
 	<?= Html::csrfMetaTags() ?>
-	<title>在庫あるんけ</title>
+	<title><?= Yii::t('app', 'Zaiko Arunke') ?></title>
 	<?php $this->head() ?>
 </head>
 <body>
@@ -31,7 +31,7 @@ AppAsset::register($this);
 <div class="wrap">
 	<?php
 	NavBar::begin([
-		'brandLabel' => '在庫あるんけ',
+		'brandLabel' => Yii::t('app', 'Zaiko Arunke'),
 		'brandUrl' => Yii::$app->homeUrl,
 		'options' => [
 			'class' => 'navbar-default navbar-fixed-top',
@@ -40,13 +40,13 @@ AppAsset::register($this);
 	echo Nav::widget([
 		'options' => ['class' => 'navbar-nav navbar-right'],
 		'items' => Yii::$app->user->isGuest ? ([
-			['label' => 'ログイン', 'url' => ['/site/login']],
+			['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']],
 		]) : ([
-			['label' => '在庫あるんけについて', 'url' => ['/site/about']],
-			['label' => '項目一覧', 'url' => ['/item/index']],
+			['label' => Yii::t('app', 'About'), 'url' => ['/site/about']],
+			['label' => Yii::t('app', 'Items'), 'url' => ['/item/index']],
 			//['label' => 'User', 'url' => ['/user']],
 			[
-				'label' => 'ログアウト (' . Yii::$app->user->displayName . ')',
+				'label' => Yii::t('app', 'Logout ({username})', ['username' => Yii::$app->user->displayName]),
 				'url' => ['/user/logout'],
 				'linkOptions' => ['data-method' => 'post'],
 			],

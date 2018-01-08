@@ -58,18 +58,18 @@ class Item extends BaseModel
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'sort' => '並び順',
-            'name' => '項目名',
-            'unit' => '単位',
-            'last_amount' => '最終補充量',
-            'total_amount' => '合計補充量',
-            'first_refill_time' => '初回交換日',
-            'last_refill_time' => '前回交換日',
-            'est_refill_time' => '次回交換目安',
-            'refill_frequency' => '交換頻度',
+            'sort' => Yii::t('app/item', 'Order'),
+            'name' => Yii::t('app/item', 'Item name'),
+            'unit' => Yii::t('app/item', 'Unit'),
+            'last_amount' => Yii::t('app/item', 'Last refilled amount'),
+            'total_amount' => Yii::t('app/item', 'Total refilled amount'),
+            'first_refill_time' => Yii::t('app/item', 'First refilling date'),
+            'last_refill_time' => Yii::t('app/item', 'Last refilling date'),
+            'est_refill_time' => Yii::t('app/item', 'Estimated next refilling date'),
+            'refill_frequency' => Yii::t('app/item', 'Refill frequency'),
         ];
     }
-    
+
     /**
      * @param boolean $runValidation
      * @param array $attributes
@@ -99,7 +99,7 @@ class Item extends BaseModel
     {
         return $this->hasMany(Refill::className(), ['item_id' => 'id']);
     }
-    
+
     /**
      * @return string?
      */
@@ -108,11 +108,11 @@ class Item extends BaseModel
         if (!isset($this->refill_frequency, $this->last_amount, $this->unit)) {
             return null;
         }
-        
+
         $freq = $this->refill_frequency * $this->last_amount;
         return $this->getFrequencyPeriodNotation($freq) . ' / ' . $this->last_amount . ' ' . $this->unit;
     }
-    
+
     private function getFrequencyPeriodNotation($freq) {
         $freq /= 86400; // sec → day
 
@@ -123,7 +123,7 @@ class Item extends BaseModel
         $days = round(10 * $freq) / 10;
         return $days . '日';
     }
-    
+
     /**
      * 次回交換目安に応じた状態を返す
      * @return string
@@ -145,7 +145,7 @@ class Item extends BaseModel
             return 'largo';
         }
     }
-    
+
     /**
      * カンマ区切りのIDで並び順を更新する
      * @param string $aOrders カンマ区切りの item_id
@@ -155,7 +155,7 @@ class Item extends BaseModel
         if (!preg_match('/\\A[1-9][0-9]*(?:,[1-9][0-9]*)*\\z/', $aOrders)) {
             return false;
         }
-        
+
         $orders = explode(',', $aOrders);
         $transaction = Yii::$app->db->beginTransaction();
         try {

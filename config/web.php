@@ -14,6 +14,8 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'timeZone' => 'Asia/Tokyo',
+    // 'language' => 'ja-JP',
+    'sourceLanguage' => 'en-US',
     'components' => [
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
@@ -69,8 +71,14 @@ $config = [
         'i18n' => [
             'translations' => [
                 '*' => [
-                        'class' => 'yii\i18n\PhpMessageSource',
-                        'basePath' => '@app/messages',
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/item' => 'item.php',
+                        'user' => 'user.php',
+                    ],
                 ],
             ],
         ],

@@ -27,7 +27,7 @@ use kartik\widgets\DatePicker;
 
     <div class="form-group">
         <div class="col-lg-offset-2 col-lg-10">
-        <?= Html::submitButton($model->isNewRecord ? '<span class="glyphicon glyphicon-save"></span> '.Yii::t('app', '保存する') : '<span class="glyphicon glyphicon-save"></span> '.Yii::t('app', '保存する'), ['class' => $model->isNewRecord ? 'btn btn-primary grid-button' : 'btn btn-primary grid-button']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '<span class="glyphicon glyphicon-save"></span> '.Yii::t('app/item', 'Save') : '<span class="glyphicon glyphicon-save"></span> '.Yii::t('app/item', 'Save'), ['class' => $model->isNewRecord ? 'btn btn-primary grid-button' : 'btn btn-primary grid-button']) ?>
         </div>
     </div>
 

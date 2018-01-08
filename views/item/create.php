@@ -3,7 +3,7 @@
 
 use yii\helpers\Html;
 
-$this->title = Yii::t('app', '項目の追加', [
+$this->title = Yii::t('app/item', 'Add item', [
     'modelClass' => 'Item',
 ]);
 ?>

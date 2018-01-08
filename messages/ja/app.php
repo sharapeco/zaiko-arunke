@@ -17,5 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'delete' => '削除',
+    'About' => '在庫あるんけについて',
+    'Items' => '項目一覧',
+    'Login' => 'ログイン',
+    'Logout ({username})' => 'ログアウト ({username}）',
+    'Zaiko Arunke' => '在庫あるんけ',
 ];

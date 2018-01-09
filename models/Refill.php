@@ -53,8 +53,8 @@ class Refill extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app/refill', 'ID'),
-            'item_id' => Yii::t('app/refill', 'Item ID'),
+            'id' => Yii::t('app/refill', 'Id'),
+            'item_id' => Yii::t('app/refill', 'Item id'),
             'amount' => Yii::t('app/refill', 'Amount'),
             'refill_time' => Yii::t('app/refill', 'Refill date'),
             'refill_time_local' => Yii::t('app/refill', 'Refill date'),

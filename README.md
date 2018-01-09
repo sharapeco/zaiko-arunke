@@ -1,4 +1,4 @@
-<img alt="*" src="https://github.com/sharapeco/zaiko-arunke/blob/master/web/assets/img/favicon.jpg?raw=true" width="32" height="32">  在庫あるんけ（仮）
+<img alt="＊" src="https://github.com/sharapeco/zaiko-arunke/blob/master/web/assets/img/favicon.jpg?raw=true" width="32" height="32">  在庫あるんけ（仮）
 =================================
 
 在庫あるんけ (仮) is a simple personal inventory manager made in PHP [Yii Framework 2](http://www.yiiframework.com).
@@ -38,6 +38,13 @@ return [
 	'charset' => 'utf8',
 	'enableSchemaCache' => false,
 ];
+```
+
+Edit `config/web.php` to set time zone and language, for example:
+
+```php
+    'timeZone' => 'Pacific/Honolulu',
+    'language' => 'en-US',
 ```
 
 

@@ -18,10 +18,14 @@
  */
 return [
     'About' => '在庫あるんけについて',
+    'About Zaiko Arunke' => '在庫あるんけについて',
     'Items' => '項目一覧',
     'Login' => 'ログイン',
     'Logout ({username})' => 'ログアウト ({username}）',
     'Zaiko Arunke' => '在庫あるんけ',
+    'Toyota production method into your home' => '家庭にもトヨタ生産方式を',
+    'App, you can know the rest of stocks at a glance.' => '在庫あるんけは日用品の在庫を一目でわかるようにするアプリです。',
+    'Start now' => '今すぐ使う',
 
     // Date formats
     'php:j F Y' => 'php:Y年n月j日',

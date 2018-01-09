@@ -22,7 +22,7 @@ You can then install this application using the following command:
 
 ~~~
 git clone git://github.com/sharapeco/zaiko-arunke.git
-cd zaiko-arunke.git
+cd zaiko-arunke
 composer install
 ~~~
 

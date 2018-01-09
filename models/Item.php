@@ -66,7 +66,7 @@ class Item extends BaseModel
             'first_refill_time' => Yii::t('app/item', 'First refilling date'),
             'last_refill_time' => Yii::t('app/item', 'Last refilling date'),
             'est_refill_time' => Yii::t('app/item', 'Estimated next refilling date'),
-            'refill_frequency' => Yii::t('app/item', 'Refill frequency'),
+            'refill_frequency' => Yii::t('app/item', 'Frequency'),
         ];
     }
 
@@ -118,10 +118,10 @@ class Item extends BaseModel
 
         if ($freq > 28.5) {
             $weeks = round(10 * $freq / 30) / 10;
-            return $weeks . 'ヶ月';
+            return $weeks . Yii::t('app/item', ' months');
         }
         $days = round(10 * $freq) / 10;
-        return $days . '日';
+        return $days . Yii::t('app/item', ' days');
     }
 
     /**

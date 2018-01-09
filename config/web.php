@@ -14,7 +14,7 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'timeZone' => 'Asia/Tokyo',
-    // 'language' => 'ja-JP',
+    'language' => 'ja-JP',
     'sourceLanguage' => 'en-US',
     'components' => [
         'urlManager' => [
@@ -77,6 +77,7 @@ $config = [
                     'fileMap' => [
                         'app' => 'app.php',
                         'app/item' => 'item.php',
+                        'app/refill' => 'refill.php',
                         'user' => 'user.php',
                     ],
                 ],

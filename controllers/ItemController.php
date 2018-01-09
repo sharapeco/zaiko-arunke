@@ -73,7 +73,7 @@ class ItemController extends \yii\web\Controller
         $model = new Item;
 
         // デフォルト値を設定する
-        $model->unit = '個';
+        $model->unit = Yii::t('app/item', 'unit');
 
         // POSTされた場合は保存する
         if ($model->load(Yii::$app->request->post())) {
@@ -81,7 +81,7 @@ class ItemController extends \yii\web\Controller
             $model->user_id = Yii::$app->user->identity->id;
 
             if ($model->save()) {
-                Yii::$app->session->setFlash("Entry-success", Yii::t('app', '項目を追加しました'));
+                Yii::$app->session->setFlash("Entry-success", Yii::t('app/item', 'Item added'));
                 return $this->redirect(['index']);
             } else {
                 // error in saving model
@@ -100,7 +100,7 @@ class ItemController extends \yii\web\Controller
         // POSTされた場合は保存する
         if ($model->load(Yii::$app->request->post())) {
             if ($model->save()) {
-                Yii::$app->session->setFlash("Entry-success", Yii::t('app', '項目を更新しました'));
+                Yii::$app->session->setFlash("Entry-success", Yii::t('app/item', 'Item updated'));
                 return $this->redirect(['view', 'id' => $id]);
             } else {
                 // error in saving model
@@ -121,7 +121,7 @@ class ItemController extends \yii\web\Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        Yii::$app->session->setFlash("Entry-success", Yii::t('app/item', 'Item deleted'));
         return $this->redirect(['index']);
     }
 
@@ -134,10 +134,10 @@ class ItemController extends \yii\web\Controller
 
         if (($post = Yii::$app->request->post()) && isset($post['orders'])) {
             if (Item::updateOrders($post['orders'])) {
-                Yii::$app->session->setFlash("Entry-success", Yii::t('app', '並び順を更新しました'));
+                Yii::$app->session->setFlash("Entry-success", Yii::t('app/item', 'Order changed'));
                 return $this->redirect(['index']);
             } else {
-                Yii::$app->session->setFlash("Entry-danger", Yii::t('app', '並び順の更新に失敗しました'));
+                Yii::$app->session->setFlash("Entry-danger", Yii::t('app', 'Failed to change order'));
                 return $this->redirect(['sort']);
             }
         }

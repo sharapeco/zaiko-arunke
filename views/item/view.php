@@ -13,14 +13,14 @@ use app\models\Refill;
 
 <div class="form-action">
     <div class="pull-left">
-        <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span> '.Yii::t('app', '一覧に戻る').'', ['/item/index'], ['class'=>'btn btn-default']) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-chevron-left"></span> '.Yii::t('app/item', 'Back').'', ['/item/index'], ['class'=>'btn btn-default']) ?>
     </div>
     <div class="pull-right">
-        <?= Html::a('<span class="glyphicon glyphicon-edit"></span> '.Yii::t('app', '変更').'', ['update', 'id' => $item->id], ['class'=>'btn btn-success']) ?>
-        <?= Html::a('<span class="glyphicon glyphicon-remove"></span> '.Yii::t('app', '削除').'', ['delete', 'id' => $item->id], [
+        <?= Html::a('<span class="glyphicon glyphicon-edit"></span> '.Yii::t('app/item', 'Edit').'', ['update', 'id' => $item->id], ['class'=>'btn btn-success']) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-remove"></span> '.Yii::t('app/item', 'Delete').'', ['delete', 'id' => $item->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'この項目を削除してもよろしいですか？',
+                'confirm' => Yii::t('app/item', 'Delete this item?'),
                 'method' => 'POST',
             ],
         ]) ?>
@@ -32,15 +32,15 @@ use app\models\Refill;
 <table class="table">
     <tbody>
         <tr>
-            <th scope="col">次回交換目安</th>
-            <td><?= Html::encode($item->est_refill_time ? Yii::$app->formatter->asDate($item->est_refill_time, 'php:Y年n月j日') : '----'); ?></td>
+            <th scope="col"><?= Yii::t('app/item', 'Estimated next refilling date') ?></th>
+            <td><?= Html::encode($item->est_refill_time ? Yii::$app->formatter->asDate($item->est_refill_time, Yii::t('app', 'php:j F Y')) : '----'); ?></td>
         </tr>
         <tr>
-            <th scope="col">前回交換日時</th>
-            <td><?= Html::encode($item->last_refill_time ? Yii::$app->formatter->asDate($item->last_refill_time, 'php:Y年n月j日 H:i') : '----'); ?></td>
+            <th scope="col"><?= Yii::t('app/item', 'Last refilling date') ?></th>
+            <td><?= Html::encode($item->last_refill_time ? Yii::$app->formatter->asDate($item->last_refill_time, Yii::t('app', 'php:j F Y H:i')) : '----'); ?></td>
         </tr>
         <tr>
-            <th scope="col">交換頻度</th>
+            <th scope="col"><?= Yii::t('app/item', 'Frequency') ?></th>
             <td><?= Html::encode(($tmp = $item->getFrequency()) ? $tmp : '----'); ?></td>
         </tr>
     </tbody>
@@ -70,7 +70,7 @@ use app\models\Refill;
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-        <?= Html::submitButton('<span class="glyphicon glyphicon-plus"></span> '.Yii::t('app', '補充'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('<span class="glyphicon glyphicon-plus"></span> '.Yii::t('app/item', 'Refill'), ['class' => 'btn btn-primary']) ?>
         </div>
     </div>
 </div>
@@ -85,13 +85,13 @@ use app\models\Refill;
     'showOnEmpty' => false,
     'rowOptions' => function($refill, $index, $widget, $grid) use ($item) {
             return [
-                'id' => $refill['id'], 
+                'id' => $refill['id'],
                 'onclick' => 'location.href="'
                     . Url::to(['refill/update', 'id' => $refill['id'], 'item_id' => $item->id])
                     . '";',
                 'style' => "cursor: pointer",
             ];
-    },        
+    },
     'columns' => [
         [
             'attribute' => 'refill_time',

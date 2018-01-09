@@ -25,7 +25,7 @@ class Refill extends BaseModel
      * @var array 日付時間型のカラム名のリスト
      */
     protected static $datetimeColumns = ['refill_time'];
-    
+
     /**
      * @inheritdoc
      */
@@ -53,14 +53,14 @@ class Refill extends BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'item_id' => '項目ID',
-            'amount' => '補充数',
-            'refill_time' => '交換日時',
-            'refill_time_local' => '交換日時',
+            'id' => Yii::t('app/refill', 'ID'),
+            'item_id' => Yii::t('app/refill', 'Item ID'),
+            'amount' => Yii::t('app/refill', 'Amount'),
+            'refill_time' => Yii::t('app/refill', 'Refill date'),
+            'refill_time_local' => Yii::t('app/refill', 'Refill date'),
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -68,7 +68,7 @@ class Refill extends BaseModel
     {
         return $this->hasOne(Item::className(), ['id' => 'item_id']);
     }
-    
+
     /**
      * @param boolean $insert
      * @param array $changedAttributes
@@ -76,7 +76,7 @@ class Refill extends BaseModel
     public function afterSave($insert, $changedAttributes) {
         $this->updateItemRefillInformation();
     }
-    
+
     /**
      * 「項目」の情報を更新する
      */
@@ -85,7 +85,7 @@ class Refill extends BaseModel
         if (!$item) {
             throw new RuntimeException('Item not found.');
         }
-        
+
         $refills = Refill::find()
             ->where(['item_id' => $this->item_id])
             ->all();
@@ -118,7 +118,7 @@ class Refill extends BaseModel
             $frequency = $interval / $usedAmount;
             $estTime = (integer)round($max->getTimestamp() + $frequency * $lastAmount);
             $est = new DateTime('@' . $estTime, $UTC);
-            
+
             $item->est_refill_time = $est->format('Y-m-d H:i:s');
             $item->refill_frequency = $frequency;
         }

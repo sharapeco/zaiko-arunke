@@ -22,4 +22,11 @@ return [
     'Login' => 'ログイン',
     'Logout ({username})' => 'ログアウト ({username}）',
     'Zaiko Arunke' => '在庫あるんけ',
+
+    // Date formats
+    'php:j F Y' => 'php:Y年n月j日',
+    'php:j F Y H:i' => 'php:Y年n月j日 H:i',
+
+    // Exceptions
+    'Forbidden to change entries of other users' => 'アクセス権がありません',
 ];

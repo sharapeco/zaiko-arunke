@@ -60,13 +60,6 @@ http://localhost/zaiko-arunke/web/
 Use the user “neo” and password “neo”.
 
 
-To do
--------
-
-1. Internationalization
-2. Add item categories
-
-
 Thanks to
 -------------
 [![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com)

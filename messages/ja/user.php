@@ -17,6 +17,35 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'ID' => 'ID',
+    'User ID' => 'ユーザID',
+    'Role' => '役割',
+    'Role ID' => '役割ID',
+    'Status' => '状態',
+    'Name' => '名前',
+    'Email' => 'Email',
+    'Username' => 'ユーザ名',
+    'Auth Key' => '承認キー',
+    'Access Token' => 'アクセストークン',
+    'Logged In Ip' => 'ログイン元IP',
+    'Logged In At' => 'ログイン日時',
+    'Created Ip' => '作成元IP',
+    'Created At' => '作成日時',
+    'Updated At' => '更新日時',
+    'Banned At' => 'BAN日時',
+    'Banned Reason' => 'BAN理由',
+    'Username' => 'ユーザ名',
+    'New password' => '新しいパスワード',
+    'Current password' => '現在のパスワード',
     'Login' => 'ログイン',
     'Password' => 'パスワード',
+
+    'Email not found' => 'Email アドレスが一致しません',
+    'Email / Username' => 'Email / ユーザ名',
+    'Email / Username not found' => 'Email・ユーザ名が一致しません',
+    'Username not found' => 'ユーザ名が一致しません',
+
+    '{attribute} can contain only letters, numbers, and "_"' => '{attribute}は英数字とアンダーバーのみ使用できます',
+    'Passwords do not match' => 'パスワードが一致しません',
+    'Email Confirmation' => 'メールアドレスの確認',
 ];

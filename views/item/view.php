@@ -66,7 +66,7 @@ use app\models\Refill;
         'addon' => ['append' => ['content' => $item->unit]],
     ])->textInput(['size' => 10, 'type' => 'tel']) ?>
 
-    <?= $form->field($newRefill, 'refill_time')->textInput(['size' => 10, 'type' => 'datetime']) ?>
+    <?= $form->field($newRefill, 'refill_time_local')->textInput(['size' => 10, 'type' => 'datetime']) ?>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

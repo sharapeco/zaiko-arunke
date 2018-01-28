@@ -54,7 +54,7 @@ class ItemController extends \yii\web\Controller
         // 新規追加用
         $newRefill = new Refill();
         $newRefill->amount = $item->last_amount;
-        $newRefill->refill_time = date('Y/m/d H:i');
+        $newRefill->refill_time_local = date('Y/m/d H:i');
 
         // 補充履歴
         $refillSearchModel = new RefillSearch();
